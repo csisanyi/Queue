@@ -2,16 +2,13 @@ package com.matritellabs.utama.collection;
 
     public interface Queue {
 
-
         /**Inserts the specified element into this queue if it is possible to do so immediately without
         violating capacity restrictions,returning true upon success
         and throwing an IllegalStateException if no space is currently available.*/
         boolean add(Object e);
 
-
         /**Retrieves, but does not remove, the head of this queue.*/
         Object element();
-
 
         /**Inserts the specified element into this queue if it is possible to do so immediately without
         violating capacity restrictions.*/
