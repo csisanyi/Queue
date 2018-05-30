@@ -7,10 +7,17 @@ import java.util.NoSuchElementException;
 public class QueueImplementation implements Queue {
 
     List<Object> myQueue = new ArrayList<>();
+    final int capacity = 50;
+
 
     public boolean add(Object e) {
-        myQueue.add(e);
-        return true;
+        if (myQueue.size() == capacity) {
+            System.out.println("no more capacity");
+            throw new IllegalStateException();
+         } else {
+            myQueue.add(e);
+            return true;
+        }
     }
 
     public Object element() {
@@ -22,8 +29,13 @@ public class QueueImplementation implements Queue {
     }
 
     public boolean offer(Object e) {
-        myQueue.add(e);
-        return true;
+        if (myQueue.size() == capacity) {
+            System.out.println("no more capacity");
+            return false;
+        } else {
+            myQueue.add(e);
+            return true;
+        }
     }
 
     public Object peek() {
