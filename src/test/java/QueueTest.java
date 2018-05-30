@@ -144,12 +144,4 @@ public class QueueTest {
         assertNotNull(queue.remove());
     }
 
-    // test remove() null
-    @Test
-    public void testRemoveMethod_Null() {
-        QueueImplementation emptyQueue = new QueueImplementation();
-
-        assertNull(emptyQueue.remove());
-    }
-    
 }
