@@ -135,13 +135,21 @@ public class QueueTest {
      *      return Object;
      *      return null;
      *
-     *      Retrieves and removes the head of this queue.
+     *      Retrieves and removes the head of this queue. Throws: NoSuchElementException - if this queue is empty
      */
 
     // test remove() not null
     @Test
     public void testRemoveMethod_NotNull() {
         assertNotNull(queue.remove());
+    }
+
+    // test remove() null
+    @Test (expected = NoSuchElementException.class)
+    public void testRemoveMethod_Null() {
+        QueueImplementation emptyQueue = new QueueImplementation();
+
+        assertNull(emptyQueue.remove());
     }
 
 }
