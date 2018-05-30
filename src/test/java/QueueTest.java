@@ -38,6 +38,10 @@ public class QueueTest {
     public void testAddMethod_False() {
         Object e = new Object();
 
+        for (int i = 0; i < queue.getQueueCapacity(); i++) {
+            queue.add(e);
+        }
+
         assertFalse(queue.add(e));
 
     }
@@ -85,6 +89,11 @@ public class QueueTest {
     @Test
     public void testOfferMethod_False() {
         Object e = new Object();
+
+        for (int i = 0; i <= queue.getQueueCapacity(); i++) {
+            queue.offer(e);
+        }
+
         assertFalse(queue.offer(e));
     }
 
