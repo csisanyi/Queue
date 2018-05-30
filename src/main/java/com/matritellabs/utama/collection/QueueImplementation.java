@@ -6,14 +6,14 @@ import java.util.NoSuchElementException;
 
 public class QueueImplementation implements Queue {
 
-    List<Object> myQueue = new ArrayList<>() ;
+    List<Object> myQueue = new ArrayList<>();
 
     public boolean add(Object e) {
         myQueue.add(e);
         return true;
     }
 
-    public Object element()   {
+    public Object element() {
         if (myQueue.size() > 0) {
             return myQueue.get(0);
         } else {
@@ -45,9 +45,12 @@ public class QueueImplementation implements Queue {
     }
 
     public Object remove() {
+        if (myQueue.size() > 0) {
             Object retrievedObject = myQueue.get(0);
             myQueue.remove(0);
             return retrievedObject;
+        } else {
+            throw new NoSuchElementException();
         }
     }
-
+}
