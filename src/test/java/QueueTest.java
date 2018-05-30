@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 
 public class QueueTest {
 
-    private QueueImplementation queue;
+    private static QueueImplementation queue;
 
     @Before public void initialize() {
         queue = new QueueImplementation();
@@ -39,6 +39,7 @@ public class QueueTest {
         Object e = new Object();
 
         assertFalse(queue.add(e));
+
     }
 
     /**
