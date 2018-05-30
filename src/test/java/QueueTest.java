@@ -76,6 +76,7 @@ public class QueueTest {
     @Test
     public void testOfferMethod_True() {
         Object e = new Object();
+        
         assertTrue(queue.offer(e));
     }
 
