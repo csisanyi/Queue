@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 
 public class QueueImplementation implements Queue {
 
-    List<Object> myQueue = new ArrayList<>(10);
+    List<Object> myQueue = new ArrayList<>();
 
     public boolean add(Object e) {
         myQueue.add(e);
