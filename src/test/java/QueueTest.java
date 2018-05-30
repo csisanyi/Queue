@@ -1,4 +1,3 @@
-import com.matritellabs.utama.collection.Queue;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -12,13 +11,13 @@ public class QueueTest {
      *      violating capacity restrictions,returning true upon success and throwing an IllegalStateException
      *      if no space is currently available.
      */
-
+    
     // Test add() if true
     @Test
     public void testAddMethod_True() {
         Object e = new Object();
 
-        assertFalse(Queue.add(e));
+        assertFalse(add(e));
     }
 
     // Test add() if false and throwing exception
@@ -26,7 +25,7 @@ public class QueueTest {
     public void testAddMethod_False() {
         Object e = new Object();
 
-        assertFalse(Queue.add(e));
+        assertFalse(add(e));
     }
 
     /**
@@ -128,7 +127,7 @@ public class QueueTest {
 
     // test remove() null
     @Test
-    public void testRemove_Null() {
+    public void testRemoveMethod_Null() {
         assertNull(remove());
     }
     
