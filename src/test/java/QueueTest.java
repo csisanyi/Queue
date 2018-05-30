@@ -1,8 +1,20 @@
-import com.matritellabs.utama.collection.Queue;
+import com.matritellabs.utama.collection.QueueImplementation;
+import org.junit.Before;
 import org.junit.Test;
+
+import java.util.NoSuchElementException;
+
 import static org.junit.Assert.*;
 
 public class QueueTest {
+
+    private QueueImplementation queue;
+
+    @Before public void initialize() {
+        queue = new QueueImplementation();
+        queue.add(new Object());
+    }
+
     /**
      * test add(Object e):
      *      return true;
@@ -18,7 +30,7 @@ public class QueueTest {
     public void testAddMethod_True() {
         Object e = new Object();
 
-        assertFalse(add(e));
+        assertTrue(queue.add(e));
     }
 
     // Test add() if false and throwing exception
@@ -26,7 +38,7 @@ public class QueueTest {
     public void testAddMethod_False() {
         Object e = new Object();
 
-        assertFalse(add(e));
+        assertFalse(queue.add(e));
     }
 
     /**
@@ -40,13 +52,15 @@ public class QueueTest {
     // test element() not null
     @Test
     public void testElementMethod_NotNull() {
-        assertNotNull(element());
+        assertNotNull(queue.element());
     }
 
     // test element() null
-    @Test
+    @Test (expected = NoSuchElementException.class)
     public void testElementMethod_Null() {
-        assertNull(element());
+        QueueImplementation emptyQueue = new QueueImplementation();
+
+        assertNull(emptyQueue.element());
     }
 
     /**
@@ -62,14 +76,14 @@ public class QueueTest {
     @Test
     public void testOfferMethod_True() {
         Object e = new Object();
-        assertFalse(offer(e));
+        assertTrue(queue.offer(e));
     }
 
     // test offer() false
     @Test
     public void testOfferMethod_False() {
         Object e = new Object();
-        assertFalse(offer(e));
+        assertFalse(queue.offer(e));
     }
 
     /**
@@ -83,13 +97,15 @@ public class QueueTest {
     // test peek() not null
     @Test
     public void testPeekMethod_NotNull() {
-        assertNotNull(peek());
+        assertNotNull(queue.peek());
     }
 
     // test peek() null
     @Test
     public void testPeekMethod_Null() {
-        assertNull(peek());
+        QueueImplementation emptyQueue = new QueueImplementation();
+
+        assertNull(emptyQueue.peek());
     }
 
     /**
@@ -103,13 +119,15 @@ public class QueueTest {
     // test poll() not null
     @Test
     public void testPollMethod_NotNull() {
-        assertNotNull(poll());
+        assertNotNull(queue.poll());
     }
 
     // test poll() null
     @Test
     public void testPollMethod_Null() {
-        assertNull(poll());
+        QueueImplementation emptyQueue = new QueueImplementation();
+
+        assertNull(emptyQueue.poll());
     }
 
     /**
@@ -123,13 +141,15 @@ public class QueueTest {
     // test remove() not null
     @Test
     public void testRemoveMethod_NotNull() {
-        assertNotNull(remove());
+        assertNotNull(queue.remove());
     }
 
     // test remove() null
     @Test
     public void testRemoveMethod_Null() {
-        assertNull(remove());
+        QueueImplementation emptyQueue = new QueueImplementation();
+
+        assertNull(emptyQueue.remove());
     }
     
 }
